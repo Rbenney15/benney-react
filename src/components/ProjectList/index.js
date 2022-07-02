@@ -1,124 +1,58 @@
 import React, { useState } from 'react';
 import Modal from '../Modal';
 
-const PhotoList = ({ category }) => {
+const ProjectList = ({ category }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState();
 
   const [photos] = useState([
     {
-      name: 'Grocery aisle',
-      category: 'commercial',
+      name: 'UpLift',
+      category: 'project',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+        'This is a Fitness Tracker application that allows users to join a like minded community to track and share workouts.',
+      github: 'https://github.com/Rbenney15/UpLift',
+      deployed: 'https://uplift-srb.herokuapp.com/login'
     },
     {
-      name: 'Grocery booth',
-      category: 'commercial',
+      name: 'Note Taker App',
+      category: 'project',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+        'This application is a Note Taker application. Allows the user to make notes for future reference. The user has the ability to save the notes for later and also delete the notes once they have completed them.',
+      github: 'https://github.com/Rbenney15/note-taker',
+      deployed: 'https://note-taker-rbgwu.herokuapp.com',
     },
     {
-      name: 'Building exterior',
-      category: 'commercial',
+      name: 'Password Generator App',
+      category: 'project',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+        'This is a random password generator to create more complex and secure passwords.',
+      github: 'https://github.com/Rbenney15/password-generator',
+      deployed: 'https://rbenney15.github.io/password-generator/',
     },
     {
-      name: 'Restaurant table',
-      category: 'commercial',
+      name: 'Weekday Scheduler',
+      category: 'project',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+        'An editable weekday scheduler to track daily tasks.',
+      github: 'https://github.com/Rbenney15/workday-scheduler',
+      deployed: 'https://rbenney15.github.io/workday-scheduler/',
     },
     {
-      name: 'Cafe interior',
-      category: 'commercial',
+      name: 'Weather Dashboard',
+      category: 'project',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+        'Weather Dashboard application where a user can search for a city they would like to know the current and upcoming 5 day forecast.',
+      github: 'https://github.com/Rbenney15/weather-dashboard',
+      deployed: 'https://rbenney15.github.io/weather-dashboard/',
     },
     {
-      name: 'Cat green eyes',
-      category: 'portraits',
+      name: 'Team Profile Generator',
+      category: 'project',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Green parrot',
-      category: 'portraits',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Yellow macaw',
-      category: 'portraits',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Pug smile',
-      category: 'portraits',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Pancakes',
-      category: 'food',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Burrito',
-      category: 'food',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Scallop pasta',
-      category: 'food',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Burger',
-      category: 'food',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Fruit bowl',
-      category: 'food',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Green river',
-      category: 'landscape',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Docks',
-      category: 'landscape',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Panoramic village by sea',
-      category: 'landscape',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Domestic landscape',
-      category: 'landscape',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: 'Park bench',
-      category: 'landscape',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+        'This application is a node command line interface that allows a manager to build a team roster by inputing some general information about each team member. A HTML webpage that will display a summary of each team member to easily access their teams contact information.',
+      github: 'https://github.com/Rbenney15/team-profile-generator',
+      deployed: 'CLI App, clone repo to run application',
     }
   ]);
 
@@ -137,7 +71,8 @@ const PhotoList = ({ category }) => {
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
           <img
-            src={require(`../../assets/small/${category}/${i}.jpg`)}
+            // src={require(`../../assets/images/projects${category}/${i}.jpg`)}
+            src={require(`../../assets/images/projects${category}/${i}.png`)}
             alt={image.name}
             className="img-thumbnail mx-1"
             onClick={() => toggleModal(image, i)}
@@ -149,4 +84,4 @@ const PhotoList = ({ category }) => {
   );
 };
 
-export default PhotoList;
+export default ProjectList;
