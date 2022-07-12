@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import Nav from './components/Nav';
 import About from './components/About';
-import Project from './components/Project';
+import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
+// import Resume from '../src/components/Pdf/index';
+import Footer from './components/Footer';
 
 function App() {
-  const [categories] = useState([ 
-    { name: 'My Work', description: 'Here you can find a list of projects that I have created using a varierty of technologies.'},
-    { name: 'Resume', description: 'I have provided a PDF version of my resume below.' },
+  const [categories] = useState([
+    {
+      name: 'commercial',
+      description: 'Here you can find a list of projects that I have created using a varierty of technologies.',
+    },
+    { name: 'food', description: 'I have provided a PDF version of my resume below.' },
+    // { name: 'landscape', description: 'Delicious delicacies' },
+    // { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
   ]);
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
@@ -26,13 +33,15 @@ function App() {
       <main>
         {!contactSelected ? (
           <>
-            <Project currentCategory={currentCategory}></Project>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            {/* <Resume></Resume> */}
             <About></About>
           </>
         ) : (
-            <ContactForm></ContactForm>
-          )}
+          <ContactForm></ContactForm>
+        )}
       </main>
+      <Footer />
     </div>
   );
 }
